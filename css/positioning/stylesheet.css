@@ -1,0 +1,25 @@
+h1
+{
+	color: yellow;
+}
+
+.octopus
+{
+	display: block;
+	position: relative;
+	margin : 200px auto 0;
+}
+
+.hat
+{
+	display: block;
+	position: relative;
+	margin: -350px auto 0;
+}
+
+.glasses
+{
+	display: block;
+	position: relative;
+	margin: -8px auto 0;
+}
