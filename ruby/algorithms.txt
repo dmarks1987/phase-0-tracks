@@ -1,0 +1,56 @@
+ELEVATOR ALGORITHM
+
+-Arrive in elevator area.
+-UNTIL elevtor button is found
+	-scan elevator area.
+-IF elevator button is found
+	-move to elevator button.
+-Stop when arrived at elevator button.
+-Decide which floor number to go to. 
+-IF floor number determined
+	-store floor number in memory.
+-IF floor number > current floor, press the up button
+	-ELSE press the down button.
+-Until elevator door opens
+	-wait.
+-IF elevator door opens
+	- IF elevator max capacity is not reached
+		-walk in
+-Scan elevator for floor buttons.
+-IF floor buttons found
+	-UNTIL arrived at floor buttons
+		-move to buttons
+-Stop at floor buttons.
+-Scan floor buttons until "floor number" from memory is found.
+-IF floor button is found
+	-press it.
+	-ELSE keep scanning.
+-IF floor button pressed
+	-UNTIL door opens
+		-wait
+-IF door opens
+	-walk out of elevator
+
+
+ALGORITHM FOR MAKING COFFEE
+
+-Wake up
+-Walk to kitchen
+-When arrived at kitchen walk to coffee machine
+-IF old grinds from yesterday are still in filter
+	-dump old grinds and filter
+	-place new grinds and filter in machine.
+    -ELSE place new grinds and filter in machine
+-close filter mechanism
+-Open water container.
+-remove coffee pot and fill with water to desired amount.
+-Pour water into water container.
+-Close water container.
+-IF coffee machine is not plugged in
+	-plug in coffee machine
+-Turn coffee machine on
+-While drip is active
+	-GET coffee mug from cupboard.
+-When drip is finished remove coffee pot
+-Pour tasty beverage into mug.
+-enjoy.
