@@ -4,16 +4,17 @@ puts "What's the hamster's name?"
 name = gets.chomp
 puts "The hamsters name is #{name}"
 
-loud = nil
-until (loud >= 0 && loud <= 10)
-	puts "One a scale from 0(quite) to 10(loudest), describe the Hamster's volume"
-	loud = gets.chomp.to_i
-end
-puts "The hamster is #{loud} on the loud scale."
-
+puts "On a scale from 0(quite) to 10(loudest), describe the Hamster's volume"
+loud = gets.chomp.to_i
+while loud < 0 || loud > 10
+  puts "enter a number between 0 and 10."
+  loud = nil
+  loud = gets.chomp.to_i
+end  
+  puts "The hamster is #{loud} on the loud scale."
 
 puts "What color is the hamster?"
-color =  gets.chomp
+color =  gets.chompblue
 puts "The hamster is #{color}"
 
 answer = false
@@ -30,7 +31,6 @@ until answer
 		puts "please answer y or n only."
 	end
 end
-
 
 puts "How old is #{name} in years"
 age = gets.chomp.to_f
