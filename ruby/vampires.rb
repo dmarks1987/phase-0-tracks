@@ -48,16 +48,16 @@ while currentEmployee <= employeesToProcess
 	isVampire = nil
 	if (ageVerified == true) && (("#{garlicBread}" == 'y') || ("#{insurance}" != 'y'))
 		puts "Employee number #{currentEmployee} is probably not a vampire."
-		isVampire == false
+		isVampire = false
 	elsif (ageVerified == false) && (("#{garlicBread}" == 'n') || ("#{insurance}" != 'n'))
 		puts "Employee number #{currentEmployee} is probably a vampire."
-		isVampire == true
+		isVampire = true
 	elsif (ageVerified == false) && ("#{garlicBread}" == 'n') && ("#{insurance}" != 'n')
 		puts "Employee number #{currentEmployee} is most definitely a vampire"
-		isVampire == true
+		isVampire = true
 	elsif ("#{name}" == "Drake Cula") || ("#{name}" == "Tu Fang")
 		puts "Employee number #{currentEmployee} is definitely a vampire."
-		isVampire == true
+		isVampire = true
 	else
 		puts "Results for Employee #{currentEmployee} are inconclusive."
 	end
@@ -71,6 +71,7 @@ while currentEmployee <= employeesToProcess
 			allergies = gets.chomp
 		end
 	end
+
 	if ("#{allergies}" == "sunshine")
 		puts "Employee number #{currentEmployee} is probably a vampire."
 	end	
