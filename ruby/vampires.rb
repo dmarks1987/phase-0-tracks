@@ -66,13 +66,16 @@ while currentEmployee <= employeesToProcess
 	allergies = gets.chomp
 
 	if ("#{allergies}" != "done")
-		until ("#{allergies}" == "done")
+		until ("#{allergies}" == "done") || ("#{allergies}" == "sunshine")
 			puts "Next allergy:"
 			allergies = gets.chomp
 		end
-	elsif ("#{allergies}" == "sunshine")
+	end
+	if ("#{allergies}" == "sunshine")
 		puts "Employee number #{currentEmployee} is probably a vampire."
 	end
+	
+	
 
 	puts "------------------------------------"
 	currentEmployee += 1
