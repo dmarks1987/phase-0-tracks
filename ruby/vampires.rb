@@ -73,10 +73,8 @@ while currentEmployee <= employeesToProcess
 	end
 	if ("#{allergies}" == "sunshine")
 		puts "Employee number #{currentEmployee} is probably a vampire."
-	end
+	end	
 	
-	
-
 	puts "------------------------------------"
 	currentEmployee += 1
 end
