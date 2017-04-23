@@ -10,7 +10,6 @@ def encrypt(word)
 end
 
 #decrypt method
-#for each char in the string 
 def decrypt(word)
 	index = 0
 	while index < word.length
@@ -21,4 +20,20 @@ def decrypt(word)
 	p word
 end
 
-decrypt(encrypt("swordfish"))
+#program
+puts "Would you like to encrypt or decrypt a password"
+choice = gets.chomp.downcase
+if choice != "encrypt" &&  choice != "decrypt"
+	while choice != "encrypt" &&  choice != "decrypt"
+		puts "Would you like to encrypt or decrypt a password? (only encrypt or decrypt are valid answers)"
+		choice = gets.chomp.downcase
+	end	
+end
+
+if choice == "encrypt"
+	puts "enter the password:"
+	encrypt(gets.chomp.downcase)
+elsif choice == "decrypt"
+	puts "enter the password:"
+	decrypt(gets.chomp.downcase)
+end
