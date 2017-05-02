@@ -1,4 +1,5 @@
 ## PUPPY CLASS ##
+class Puppy
 
 # SPECIES -----------------------------
 # Puppy
@@ -13,7 +14,14 @@
 # Unique feature: different color eyes
 
 # BEHAVIOR ----------------------------
+# Fetch
+def fetch(toy)
+	puts "I brought back the #{toy}!"
+	toy
+end
 # Barks
 # Jumps
 # Poops
 # Tears things up
+
+end
