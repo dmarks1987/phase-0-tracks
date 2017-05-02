@@ -14,15 +14,26 @@ end
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----(I WILL BE COMING TO OFFICE HOURS FOR THIS...THREW ME FOR A LOOP)
-rdered_zombie_apocalypse_supplies = []
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[7]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[3]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[6]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[5]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[0]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[1]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[4]
-ordered_zombie_apocalypse_supplies << zombie_apocalypse_supplies[2]
+def alphabetize(arr)
+	n = arr.length - 1
+	index = 0
+	swapped = true
+	until index > n
+		arr.map! {|item| item.downcase}
+		n.times do |index|
+			if arr[index].downcase > arr[index + 1]
+				first = arr[index]
+				second = arr[index + 1]
+				arr[index] = second
+				arr[index + 1] = first
+				swapped = true
+			end
+		end
+		index += 1
+	end
+	arr
+end
+alphabetize(zombie_apocalypse_supplies)
 puts ordered_zombie_apocalypse_supplies
 
 # 3. Create a method to see if a particular item (string) is in the
