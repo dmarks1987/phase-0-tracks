@@ -55,10 +55,7 @@ class Basketball_Player
 
 	# Initialize method
 	def initialize
-	end
-
-	# Pass method
-	def pass
+		puts "Initialize Basketball_Player instance"
 	end
 
 	# Dunk method
@@ -71,17 +68,17 @@ class Basketball_Player
 	  puts "He shoots..."
 	end
 
-	# Freethrow method
-	def freethrow
-	end
-
-	# Foul method
-	def foul
-	end
-
-	# Rest method
-	def scores
-	  puts "he scores!!!"
+	# Scores method
+	def scores(points)
+		if points == 1
+			puts "He makes the freethrow"
+		elsif points == 2
+			puts "He scores"
+		elsif points == 3
+			puts "He scores from way downtown!"
+		else
+			puts "Aaaaiiiiirbaaaaaall"
+		end
 	end
 
 end
@@ -95,7 +92,7 @@ puppy.shake("left")
 puppy.shake("right")
 puppy.shake("not a paw")
 
-# initialize rus before the called methods
+# initialize runs before the called methods
 # initialize does not run if it is spelled incorrectly, 
 # I don't get an error either
 
@@ -110,6 +107,5 @@ end
 
 bballplayers.each do |baller|
   player.shoot
-  player.scores
+  player.scores(3)
 end
-
