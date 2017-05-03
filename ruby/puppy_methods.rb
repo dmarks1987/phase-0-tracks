@@ -9,12 +9,14 @@ class Puppy
 
 	# Speak method--------------------------
 	def speak(int)
-		count = 1
-		while count <= int
-			puts "Woof!"
-			int
-			count += 1
-		end
+		# count = 1
+		# while count <= int
+		# 	puts "Woof!"
+		# 	int
+		# 	count += 1
+		# end
+		int.times {puts "Woof!"} #cleaner way of writing this
+		int
 	end
 
 	# Roll over method----------------------
@@ -23,15 +25,22 @@ class Puppy
 	end
 
 	# Shake method--------------------------
-	def shake
-		puts "*shakes*"
+	def shake(paw)
+		if paw == "right"
+		puts "*shakes right paw*"
+		elsif paw == "left"
+		puts "*shakes left paw*"
+		else
+		puts "dog tilts head in confusion"
+		end
+		paw
 	end
 
 	# Convert human years to dog years.-----
 	def dog_years(human_years)
-		in_dog_years = human_years * 7
-		puts "The dog is #{in_dog_years} years old."
-		return in_dog_years
+		dog_years = human_years * 7
+		puts "The dog is #{dog_years} years old (in dog years)."
+		dog_years
 	end
 
 	# Initialize method---------------------
@@ -87,7 +96,9 @@ puppy.roll_over
 
 puppy.dog_years(7)
 
-puppy.shake
+puppy.shake("left")
+puppy.shake("right")
+puppy.shake("not a paw")
 
 bballplayers = []
 
