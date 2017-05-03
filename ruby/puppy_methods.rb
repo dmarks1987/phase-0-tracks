@@ -87,18 +87,17 @@ class Basketball_Player
 end
 
 puppy = Puppy.new
-
 puppy.fetch("ball")
-
 puppy.speak(3)
-
 puppy.roll_over
-
 puppy.dog_years(7)
-
 puppy.shake("left")
 puppy.shake("right")
 puppy.shake("not a paw")
+
+# initialize rus before the called methods
+# initialize does not run if it is spelled incorrectly, 
+# I don't get an error either
 
 bballplayers = []
 
