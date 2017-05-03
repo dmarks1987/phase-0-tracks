@@ -9,12 +9,14 @@ class Puppy
 
 	# Speak method--------------------------
 	def speak(int)
-		count = 1
-		while count <= int
-			puts "Woof!"
-			int
-			count += 1
-		end
+		# count = 1
+		# while count <= int
+		# 	puts "Woof!"
+		# 	int
+		# 	count += 1
+		# end
+		int.times {puts "Woof!"} #cleaner way of writing this
+		int
 	end
 
 	# Roll over method----------------------
@@ -23,15 +25,22 @@ class Puppy
 	end
 
 	# Shake method--------------------------
-	def shake
-		puts "*shakes*"
+	def shake(paw)
+		if paw == "right"
+		puts "*shakes right paw*"
+		elsif paw == "left"
+		puts "*shakes left paw*"
+		else
+		puts "dog tilts head in confusion"
+		end
+		paw
 	end
 
 	# Convert human years to dog years.-----
 	def dog_years(human_years)
-		in_dog_years = human_years * 7
-		puts "The dog is #{in_dog_years} years old."
-		return in_dog_years
+		dog_years = human_years * 7
+		puts "The dog is #{dog_years} years old (in dog years)."
+		dog_years
 	end
 
 	# Initialize method---------------------
@@ -46,10 +55,7 @@ class Basketball_Player
 
 	# Initialize method
 	def initialize
-	end
-
-	# Pass method
-	def pass
+		puts "Initialize Basketball_Player instance"
 	end
 
 	# Dunk method
@@ -62,32 +68,33 @@ class Basketball_Player
 	  puts "He shoots..."
 	end
 
-	# Freethrow method
-	def freethrow
-	end
-
-	# Foul method
-	def foul
-	end
-
-	# Rest method
-	def scores
-	  puts "he scores!!!"
+	# Scores method
+	def scores(points)
+		if points == 1
+			puts "He makes the freethrow"
+		elsif points == 2
+			puts "He scores"
+		elsif points == 3
+			puts "He scores from way downtown!"
+		else
+			puts "Aaaaiiiiirbaaaaaall"
+		end
 	end
 
 end
 
 puppy = Puppy.new
-
 puppy.fetch("ball")
-
 puppy.speak(3)
-
 puppy.roll_over
-
 puppy.dog_years(7)
+puppy.shake("left")
+puppy.shake("right")
+puppy.shake("not a paw")
 
-puppy.shake
+# initialize runs before the called methods
+# initialize does not run if it is spelled incorrectly, 
+# I don't get an error either
 
 bballplayers = []
 
@@ -100,6 +107,5 @@ end
 
 bballplayers.each do |baller|
   player.shoot
-  player.scores
+  player.scores(3)
 end
-
