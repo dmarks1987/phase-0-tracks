@@ -51,10 +51,11 @@ class Puppy
 end
 
 # Basketball Player class
-class Basketball_Player
+class BasketballPlayer
 
 	# Initialize method
-	def initialize
+	def initialize(name)
+		@name = name
 		puts "Initialize Basketball_Player instance"
 	end
 
@@ -99,9 +100,8 @@ puppy.shake("not a paw")
 bballplayers = []
 
 count = 1
-while count <= 50
- player = Basketball_Player.new
- bballplayers << player
+while count <= 50 
+ bballplayers << BasketballPlayer.new(count)
  count += 1
 end
 
