@@ -1,23 +1,41 @@
 class Santa
 
-	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-
-	def age(age)
-		@age = age
-	end
-
-	def ethnicity(ethnicity)
-		@ethnicity = ethnicity
-	end
-
 	def initialize(gender, ethnicity)
+		@age = 0
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		puts "Initializing Santa instance..."
 	end
 
-	def gender=(gender)
-		@gender
+	
+
+	def age
+		@age
+	end
+
+	def celebrate_birthday
+		@age = age + 1
+	end
+
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.each do |name|
+			if name == reindeer_name
+				removed_animal = @reindeer_ranking.delete(name)
+				@reindeer_ranking << removed_animal
+				break
+			end	
+		end
+		p @reindeer_ranking
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	
+	def gender=(new_gender)
+		@gender = new_gender
 	end
 
 	def speak
@@ -30,9 +48,15 @@ class Santa
 
 end
 
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-end
+
+
+# santas = []
+# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# example_genders.length.times do |i|
+#   santas << Santa.new(example_genders[i], example_ethnicities[i])
+# end
+
+
+santa1 = Santa.new("eth", "ski")
+santa1.get_mad_at("Vixen")
