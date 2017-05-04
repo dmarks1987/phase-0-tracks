@@ -42,8 +42,38 @@ def add_item(groceries, new_item, quantity = 1)
 	groceries
 end
 
+def remove_item(groceries, new_item)
+	groceries.each do |grocery, amount|
+		if grocery == new_item
+			groceries.delete(grocery)
+		end
+	end
+	groceries
+end
+
+def update_quantity(groceries, new_item, quantity = 1)
+	groceries.each do |grocery, amount|
+		if grocery == new_item
+			groceries[grocery] = amount - quantity
+		end
+	end
+	groceries
+end
+
+def pretty_list(groceries)
+	puts "Here is the groceries we need:"
+	groceries.each do |grocery, amount|
+		puts "#{grocery} - #{amount}"
+	end
+end
+
 our_list = create_list("apples oranges carrots")
 p our_list
-add_item(our_list, "raisins")
+add_item(our_list, "raisins", 5)
 p our_list
+remove_item(our_list, "raisins")
+p our_list
+update_quantity(our_list, "carrots", 1)
+p our_list
+pretty_list(our_list)
 
