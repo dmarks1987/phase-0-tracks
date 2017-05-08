@@ -13,14 +13,18 @@
 
 
 class Game
-  attr_accessor :users_word, :hidden_word
+  attr_accessor :users_word, :hidden_word, :guess_count
 
 # Initialize the instance with a word that is inputed by the user. 
   def initialize(users_word)
+    puts "Let PLAYER 2 take over from here."
+    @guess_count = users_word.length
     @users_word = users_word
     @hidden_word = "_ " * users_word.length
+    @game_won = false
   end
 
+# Method that stores the user's initial word input
   def store_user_input
     @users_word
   end
@@ -37,27 +41,48 @@ class Game
       if letter_guessed = user_letter
         @hidden_word[hidden_letter] = letter_guessed
         p @hidden_word
-      else
+      end
+      if !@users_word.include?(letter_guessed)
         puts "#{letter_guessed} is not in the word. Try again."
       end
     end
   end
 
-  def win_or_lose
-    if @users_word == @hidden_word
+  def victory
       puts "You just won. You're amazing."
-    else
-      puts "Wow, you're a freaking loser."
-    end
   end
+
+  def defeat
+    puts "You lose."
+  end
+
 end
 
+# User interface
+puts "Player 1 please enter a word."
+word_input = gets.chomp.downcase
 
+game = Game.new(word_input)
 
-# # User interface
-# puts "Player 1 please enter a word."
-# word_input = gets.chomp.downcase
+inputed_letters = []
+guess_count = word_input.length
+guess_increment = 0
 
-
-# game = Game.new(word_input)
+until guess_increment == guess_count
+  puts "Guess a letter."
+  next_letter = gets.chomp.downcase
+  if inputed_letters.include? next_letter
+    puts "You already have #{next_letter}. No guess penalty, try again."
+    next_letter = gets.chomp.downcase
+  end
+  inputed_letters << next_letter
+  game.check_guess(next_letter)
+  if @users_word == @hidden_word
+    game.victory
+  end
+  if guess_increment == guess_count
+    game.defeat
+  end
+  guess_increment += 1
+end
 
