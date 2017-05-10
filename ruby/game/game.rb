@@ -10,11 +10,6 @@ class Game
     @game_won = false
   end
 
-# Method that stores the user's initial word input
-  def store_user_input
-    @users_word
-  end
-
 # CHECK LETTER GUESS OF USER
 # IF the user guesses a letter that is in the word
   # put that letter into the proper place  in the hidden word
@@ -24,7 +19,7 @@ class Game
   def check_guess(letter_guessed)
     letter_guessed.downcase
     @users_word.split('').each_with_index do|user_letter, hidden_letter|
-      if letter_guessed = user_letter
+      if letter_guessed == user_letter
         @hidden_word[hidden_letter] = letter_guessed
         p @hidden_word
       end
@@ -64,6 +59,7 @@ guess_increment = 0
 until guess_increment == guess_count
   puts "Guess a letter."
   next_letter = gets.chomp.downcase
+  # put this in its own method.
   if inputed_letters.include? next_letter
     puts "You already have #{next_letter}. No guess penalty, try again."
     next_letter = gets.chomp.downcase
