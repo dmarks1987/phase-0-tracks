@@ -17,3 +17,7 @@ function LongestPhrase(array){
 	return longest
 }
 
+newArray = ["Zach Rudolph", "Danny Marks", "Sam"];
+
+console.log(LongestPhrase(newArray));
+
