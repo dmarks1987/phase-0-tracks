@@ -38,7 +38,7 @@ function MatchingPairs2(object1, object2){
 	var matching = null;
 	for(var key in object1){
 		for(var key2 in object2){
-			if(Object.keys(object1) === Object.keys(object2)){
+			if(Object.keys(key) === Object.keys(key2)){
 				matching = true;
 			}else{
 				matching = false;
