@@ -38,14 +38,16 @@ function MatchingPairs2(object1, object2){
 	var matching = null;
 	for(var key in object1){
 		for(var key2 in object2){
-			if(Object.keys(key) === Object.keys(key2)){
+			if(object1.hasOwnProperty(key) === object2.hasOwnProperty(key2)){
 				matching = true;
+				break;
 			}else{
 				matching = false;
+				break;
 			}
 		}
 	}
-	matching;
+	 console.log(matching);
 }
 
 // create an empty array to be filled later
@@ -78,8 +80,8 @@ console.log(LongestPhrase(longestPhraseArray));
 
 
 // ---Matching Pair driver code
-matchingPairObject1 = {name: "Steven", age: 54}; 
-matchingPairObject2 = {name: "Tamir", age: 54};
+matchingPairObject1 = {name: "Steven", age: 55}; 
+matchingPairObject2 = {name: "Tamir", age: 55};
 
 console.log(MatchingPairs(matchingPairObject2, matchingPairObject1));
 
