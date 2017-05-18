@@ -1,0 +1,54 @@
+1.)
+sqlite> SELECT * FROM climbers;
+1|Trevor|29|true|1
+2|Dylan|27|true|4
+3|Jeff|30|true|3
+4|Danny|30|true|2
+5|Baily|24|false|2
+6|Loni|28|false|1
+
+2.)
+sqlite> UPDATE climbers SET age=29 WHERE name="Loni";
+sqlite> SELECT * FROM climbers;
+1|Trevor|29|true|1
+2|Dylan|27|true|4
+3|Jeff|30|true|3
+4|Danny|30|true|2
+5|Baily|24|false|2
+6|Loni|29|false|1
+
+3.)
+sqlite> SELECT * FROM climbers, gear WHERE climbers.gear_num = gear.id;
+1|Trevor|29|true|1|1|Harness
+2|Dylan|27|true|4|4|Rope
+3|Jeff|30|true|3|3|Carabiners
+4|Danny|30|true|2|2|Quick Draws
+5|Baily|24|false|2|2|Quick Draws
+6|Loni|29|false|1|1|Harness
+
+4.)
+SELECT climbers.name, gear.type FROM climbers JOIN gear ON climbers.gear_num = gear.id;
+Trevor|Harness
+Dylan|Rope
+Jeff|Carabiners
+Danny|Quick Draws
+Baily|Quick Draws
+Loni|Harness
+
+5.)
+sqlite> DELETE FROM climbers WHERE name="Loni";
+sqlite> SELECT * FROM climbers;
+1|Trevor|29|true|1
+2|Dylan|27|true|4
+3|Jeff|30|true|3
+4|Danny|30|true|2
+5|Baily|24|false|2
+
+RELEASE 3
+---------
+
+1.)I tried a right join and got this error...
+
+SELECT climbers.name, gear.type FROM climbers RIGHT JOIN gear ON climbers.id = gear.type ORDER BY climbers.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
