@@ -43,3 +43,12 @@ sqlite> SELECT * FROM climbers;
 3|Jeff|30|true|3
 4|Danny|30|true|2
 5|Baily|24|false|2
+
+RELEASE 3
+---------
+
+1.)I tried a right join and got this error...
+
+SELECT climbers.name, gear.type FROM climbers RIGHT JOIN gear ON climbers.id = gear.type ORDER BY climbers.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
