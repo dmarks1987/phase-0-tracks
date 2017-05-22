@@ -1,0 +1,46 @@
+1.)
+sqlite> SELECT users.*, reviews.*, businesses.*
+   ...> FROM users
+   ...> JOIN reviews
+   ...> ON reviews.id = users.id
+   ...> JOIN businesses
+   ...> ON businesses.id = reviews.id
+   ...> WHERE businesses.id = reviews.id;
+
+1|Bradford|Pitt|1|5|Got married here and we've been together ever since!|1|7|1|Grundy Hollow Wedding Chapel
+2|Mandy|Kaling|2|1|Who likes getting their car towed? No one. I hate this place.|2|6|2|Amir's Towing
+3|Angela|Jolie|3|4|Hot guys and great drinks! Me and my girls get lit fam!|3|5|3|The Beagle Nightclub
+4|Steven|Wonder|4|5|Considering I'm blind, this place has offered great compassion and service to me, so I highly recommend!|4|4|4|Lotus Yoga
+5|Holly|Berry|5|3|Janet is just okay, I guess. The service is fine, but there's no reason I couldn't go somewhere else.|5|3|5|Plumbing by Janet
+6|Merryl|Streepman|6|2|You call this sushi??|6|2|6|Sushi World
+7|Denzel|George|7|5|I come here to watch all my sportz and have a tasty cold one. Great spot!|7|1|7|JoeBob's Sportz Barn
+
+
+2.)
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> FROM users
+   ...> JOIN reviews
+   ...> ON reviews.id = users.id
+   ...> JOIN businesses
+   ...> ON businesses.id = reviews.id
+   ...> WHERE businesses.id = reviews.id;
+
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|Got married here and we've been together ever since!
+Mandy|Kaling|Amir's Towing|1|Who likes getting their car towed? No one. I hate this place.
+Angela|Jolie|The Beagle Nightclub|4|Hot guys and great drinks! Me and my girls get lit fam!
+Steven|Wonder|Lotus Yoga|5|Considering I'm blind, this place has offered great compassion and service to me, so I highly recommend!
+Holly|Berry|Plumbing by Janet|3|Janet is just okay, I guess. The service is fine, but there's no reason I couldn't go somewhere else.
+Merryl|Streepman|Sushi World|2|You call this sushi??
+Denzel|George|JoeBob's Sportz Barn|5|I come here to watch all my sportz and have a tasty cold one. Great spot!
+
+
+3.)
+sqlite> SELECT users.*, reviews.*, businesses.*
+   ...> FROM users
+   ...> JOIN reviews
+   ...> ON reviews.id = users.id
+   ...> JOIN businesses
+   ...> ON businesses.id = reviews.id
+   ...> WHERE businesses.id = 1;
+
+1|Bradford|Pitt|1|5|Got married here and we've been together ever since!|1|7|1|Grundy Hollow Wedding Chapel
