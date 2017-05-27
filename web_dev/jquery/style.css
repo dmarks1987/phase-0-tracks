@@ -1,3 +1,51 @@
+#btn1{
+	width: 50px;
+  height: 25px;
+	background-color: lightgrey;
+	color: black;
+	border-radius: 5px;
+	border: 2px solid black;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: .5em;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 5px 5px 5px #888;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#btn2{
+	width: 50px;
+  height: 25px;
+	background-color: lightgrey;
+	color: black;
+	border-radius: 5px;
+	border: 2px solid black;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: .5em;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 5px 5px 5px #888;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#btn3{
+	width: 50px;
+  height: 25px;
+	background-color: lightgrey;
+	color: black;
+	border-radius: 5px;
+	border: 2px solid black;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: .5em;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 5px 5px 5px #888;
+	display: inline-block;
+	margin-right: 20px;
+}
+
 #danny {
   width: 100px;
   height: 100px;
